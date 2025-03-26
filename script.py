@@ -174,7 +174,7 @@ def main():
             # Approve pending message requests inside the loop
             pending_threads = cl.direct_pending_inbox()
             for thread in pending_threads:
-                cl.direct_answer(thread.id, "yo, this is a 1 time message to approve your dm request :0 send a reel to get a clapback.")
+                cl.direct_answer(thread.id, "yo, this is a 1 time message to approve your dm request :0 send a reel to get a clapback(ignore if u have already sent a reel).")
                 print(f"Approved thread: {thread.id}")
 
             print("All pending message requests approved.")
