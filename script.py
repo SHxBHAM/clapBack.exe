@@ -37,7 +37,7 @@ def generate_clapback(comments: List[str], reel_description: str) -> str:
     if the comments are repeating the same thing, use it directly in the response.
     
     Rules:
-    1. Make it short and to the point (20 words max)
+    1. Make it short and to the point (5 words max)
     2. Use sarcasm, dark humor, and personal attacks u can use slurs and hate speech
     3. dont use emojis
     4. Reference specific comments or patterns
