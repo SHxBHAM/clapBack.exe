@@ -158,7 +158,6 @@ def main():
     session_file = "session.json"
     seen_messages_file = "seen_messages.json"
     authenticate(cl, session_file)
-
     user_id = cl.user_id_from_username(username)
     print(f"[{get_now()}] Logged in as user ID {user_id}")
 
@@ -170,7 +169,16 @@ def main():
     print(f"[{get_now()}] Loaded seen messages.")
 
     while True:
+        
         try:
+            # Approve pending message requests inside the loop
+            pending_threads = cl.direct_pending_inbox()
+            for thread in pending_threads:
+                cl.direct_answer(thread.id, "yo, this is a 1 time message to approve your dm request :0 send a reel to get a clapback.")
+                print(f"Approved thread: {thread.id}")
+
+            print("All pending message requests approved.")
+            
             threads = cl.direct_threads()
             print(f"[{get_now()}] Retrieved direct threads.")
             time.sleep(random.uniform(2, 4))  # Add delay between API calls
