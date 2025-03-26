@@ -25,24 +25,18 @@ def generate_clapback(comments: List[str], reel_description: str) -> str:
         return "This reel is so dry I got dust in my eyes 💀"
     
     # Extract top comments for context
-    top_comments = comments[:5]  # Top 5 for context
+    top_comments = comments[:20]  # Top 5 for context
     
     # AI prompt construction
     prompt = f"""
-    You are a savage, edgy Instagram DM bot that obliterates people with witty replies. Generate a brutal, savage response make it offensive and mean.
     
-    Context:
-    - Reel Description: {reel_description}
-    - Top Comments: {top_comments}
-    if the comments are repeating the same thing, use it directly in the response.
+    these are comments under a reel : {top_comments} 
+    generate a similar comment on your own.
+    the comment should be short and under 10 words.
+    u are allowed to use slangs and slurs.
+    u are allowed to be brutal and mean if required.
+    try to be creative and u are allowed to use hinglish if used in comments.
     
-    Rules:
-    1. Make it short and to the point (5 words max)
-    2. Use sarcasm, dark humor, and personal attacks u can use slurs and hate speech
-    3. dont use emojis
-    4. Reference specific comments or patterns
-    5. Be savage and mean and use internet slangs
-    6. Make it contextual to the actual content
     
     """
 
@@ -53,14 +47,7 @@ def generate_clapback(comments: List[str], reel_description: str) -> str:
     except Exception as e:
         print(f"Error generating clapback: {e}")
         # Fallback responses if AI fails
-        fallbacks = [
-            "Your life's highlight is this? Damn, that's sad 💀",
-            "Imagine thinking this is worth sharing 💭",
-            "This reel has more issues than my childhood 🎭",
-            "If cringe was a crime, you'd be doing life without parole 💀",
-            "Your content is as dry as my father's love 💀"
-        ]
-        return random.choice(fallbacks)
+        return ("the ai has failed me it stopped working plz let my developer know that i fucked up :(")
 
 
 
