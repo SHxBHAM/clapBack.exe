@@ -10,3 +10,4 @@ typing_extensions==4.7.1
 urllib3==1.26.15
 wheel==0.41.0
 google-generativeai
+Pillow==9.5.0
